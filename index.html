@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="../calculator/style.css">
+</head>
+<body>
+    <div class="container">
+       <div class="displey-wrapper">
+           <input type="number" value="" id="calc-input">
+       </div>
+       <div class="buttons-wrapper">
+           <div class="row">
+               <div class="calc-button"  id="b7" data-digit="7">
+                   7
+               </div>
+               <div class="calc-button" id="b8" data-digit="8">
+                   8
+                </div>
+                <div class="calc-button" id="b9" data-digit="9">
+                   9
+                </div>
+                <div class="calc-button" id="dev" data-digit="/">
+                   /
+                </div>
+           </div>
+           <div class="row">
+                <div class="calc-button" id="b4" data-digit="4">
+                    4
+                </div>
+                <div class="calc-button" id="b5" data-digit="5">
+                    5
+                 </div>
+                 <div class="calc-button" id="b6" data-digit="6">
+                    6
+                 </div>
+                 <div class="calc-button" id="mult" data-digit="*">
+                    *
+                 </div>
+            </div>
+            <div class="row">
+                <div class="calc-button" id="b1" data-digit="1">
+                    1
+                </div>
+                <div class="calc-button" id="b2" data-digit="2">
+                    2
+                </div>
+                <div class="calc-button" id="b3" data-digit="3">
+                    3
+                </div>
+                <div class="calc-button" id="min" data-digit="-">
+                    -
+                </div>
+            </div>
+            <div class="row">
+                <div class="calc-button" id="b0" data-digit="0">
+                    0
+                </div>
+                <div class="calc-button" id="point" data-digit=".">
+                    .
+                </div>
+                <div class="calc-button" id="add" data-digit="+">
+                    +
+                </div>
+                <div class="calc-button orandge" id="eqv" data-digit="=">
+                    =
+                </div>
+            </div>
+       </div>
+    </div>
+
+    <script type="text/javascript">
+        var  a;
+        var firstDigit;
+        var operation;
+        var secondDigit;
+        var res;
+
+        b7.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b7").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b7").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b8.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b8").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b8").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b9.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b9").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b9").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b4.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b4").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b4").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b5.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b5").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b5").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b6.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b6").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b6").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b1.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b1").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b1").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b2.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b2").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b2").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b3.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b3").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b3").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        b0.onclick = function () {
+            if (a===undefined) {
+                a = parseInt(document.getElementById("b0").getAttribute("data-digit"));
+                document.getElementById("calc-input").value = a;
+            }
+            else {
+                a += document.getElementById("b0").getAttribute("data-digit");
+                document.getElementById("calc-input").value = a;
+            }
+        }
+
+        dev.onclick = function () {
+            firstDigit = a;
+            a = undefined;                
+            operation = "devide";
+            document.getElementById("calc-input").value = firstDigit;
+        }
+
+        eqv.onclick = function() {
+            secondDigit = a;
+            a = undefined; 
+            switch (operation) {
+                case "devide": 
+                    res = firstDigit/secondDigit;
+                    break;
+            
+                default:
+                    break;
+            }
+            document.getElementById("calc-input").value = res;
+        }
+
+        
+
+    </script>
+</body>
+</html>
