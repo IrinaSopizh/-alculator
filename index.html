@@ -211,9 +211,69 @@
             }
             document.getElementById("calc-input").value = res;
         }
-
         
+        mult.onclick = function() {
+            firstDigit = a;
+            a = undefined;                
+            operation = "multiplication";
+            document.getElementById("calc-input").value = firstDigit;
+        }
 
+        eqv.onclick = function() {
+            secondDigit = a;
+            a = undefined; 
+            switch (operation) {
+                case "multiplication": 
+                    res = firstDigit*secondDigit;
+                    break;
+            
+                default:
+                    break;
+            }
+            document.getElementById("calc-input").value = res;
+        }
+
+        min.onclick = function() {
+            firstDigit = a;
+            a = undefined;                
+            operation = "minus";
+            document.getElementById("calc-input").value = firstDigit;            
+        }
+
+        eqv.onclick = function() {
+            secondDigit = a;
+            a = undefined; 
+            switch (operation) {
+                case "minus": 
+                    res = firstDigit-secondDigit;
+                    break;
+            
+                default:
+                    break;
+            }
+            document.getElementById("calc-input").value = res;
+        }
+
+        add.onclick = function() {
+            firstDigit = a;
+            a = undefined;                
+            operation = "add";
+            document.getElementById("calc-input").value = firstDigit;            
+        }
+
+        eqv.onclick = function() {
+            secondDigit = a;
+            a = undefined; 
+            switch (operation) {
+                case "add": 
+                    res = firstDigit+secondDigit;
+                    break;
+            
+                default:
+                    break;
+            }
+            document.getElementById("calc-input").value = res;
+        }
     </script>
 </body>
 </html>
