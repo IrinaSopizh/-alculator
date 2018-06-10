@@ -74,7 +74,7 @@
        </div>
     </div>
 
-    <script type="text/javascript">
+    <script>
         var  a;
         var firstDigit;
         var operation;
@@ -198,20 +198,6 @@
             document.getElementById("calc-input").value = firstDigit;
         }
 
-        eqv.onclick = function() {
-            secondDigit = a;
-            a = undefined; 
-            switch (operation) {
-                case "devide": 
-                    res = firstDigit/secondDigit;
-                    break;
-            
-                default:
-                    break;
-            }
-            document.getElementById("calc-input").value = res;
-        }
-        
         mult.onclick = function() {
             firstDigit = a;
             a = undefined;                
@@ -219,39 +205,11 @@
             document.getElementById("calc-input").value = firstDigit;
         }
 
-        eqv.onclick = function() {
-            secondDigit = a;
-            a = undefined; 
-            switch (operation) {
-                case "multiplication": 
-                    res = firstDigit*secondDigit;
-                    break;
-            
-                default:
-                    break;
-            }
-            document.getElementById("calc-input").value = res;
-        }
-
         min.onclick = function() {
             firstDigit = a;
             a = undefined;                
             operation = "minus";
             document.getElementById("calc-input").value = firstDigit;            
-        }
-
-        eqv.onclick = function() {
-            secondDigit = a;
-            a = undefined; 
-            switch (operation) {
-                case "minus": 
-                    res = firstDigit-secondDigit;
-                    break;
-            
-                default:
-                    break;
-            }
-            document.getElementById("calc-input").value = res;
         }
 
         add.onclick = function() {
@@ -263,8 +221,16 @@
 
         eqv.onclick = function() {
             secondDigit = a;
-            a = undefined; 
             switch (operation) {
+                case "devide": 
+                    res = firstDigit/secondDigit;
+                    break;
+                case "multiplication": 
+                    res = firstDigit*secondDigit;
+                    break;
+                case "minus": 
+                    res = firstDigit-secondDigit;
+                    break;
                 case "add": 
                     res = firstDigit+secondDigit;
                     break;
@@ -273,6 +239,7 @@
                     break;
             }
             document.getElementById("calc-input").value = res;
+            a = res;
         }
     </script>
 </body>
